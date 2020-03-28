@@ -13,22 +13,23 @@ Status: IN PROGRESS /  INCUBATING
 ```
 1. Event Scheduler
 ------------------
--> incomming event ->
-   -> ${cmdSeq}-${eventType}-${aggId} file created ->
+-> incomming event
+   -> commands/${cmdSeq}-${eventMetadata} file with event metadata body created
 # command sent
 
 2. Event Processor
 ------------------
--> data from ${seqNum}-${event.eventType}-${event.aggId} file appended to log ->
-   -> ${seqNum}-${eventType}-${aggId} file removed ->
-      -> handle stored ${event} ->
-# event added
+-> event data from commands/${cmdSeq}-${eventMetadata} file read and event appended to event-log
+   -> events/${evtSeq}-${eventType}-${eventAggId} file with event body created
+      -> commands/${cmdSeq}-${eventMetadata} file removed
+# event present
 
 3. Event Handler
 ----------------
--> find all subscribers per ${event.eventType} ->
-   -> notify subscribers about event  ->
-# event subscribed
+-> events/${evtSeq}-${eventType}-${eventAggId} file read with event metadata
+   -> emit event if target subscribers found
+      -> events/${evtSeq}-${eventType}-${eventAggId} file removed
+# subscribers notified
 ```
 
 ## Connectors
