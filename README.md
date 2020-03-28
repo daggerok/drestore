@@ -23,20 +23,29 @@ Status: IN PROGRESS /  INCUBATING
 1. Event Scheduler
 ------------------
 -> incomming event ->
-   -> ${seqNum}-${eventType}-${aggId} file created ->
-# processing sheduled
+   -> ${cmdSeq}-${eventType}-${aggId} file created ->
+# command sent
 
 2. Event Processor
 ------------------
 -> data from ${seqNum}-${event.eventType}-${event.aggId} file appended to log ->
    -> ${seqNum}-${eventType}-${aggId} file removed ->
       -> handle stored ${event} ->
+# event added
 
 3. Event Handler
 ----------------
 -> find all subscribers per ${event.eventType} ->
    -> notify subscribers about event  ->
+# event subscribed
 ```
+
+_Connectors_
+
+* rsocket / message-broker flux message emitted / consumed
+* websocket message sent / received
+* rest api called / sse event received 
+* file created, written / read, removed
 
 ## Resources
 
