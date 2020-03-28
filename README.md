@@ -7,17 +7,8 @@ Please ignore that creepy shit for now. Thanks!
 
 Status: IN PROGRESS /  INCUBATING
 
-## TODO: Functionality
-* Concepts
-* Simple reactive data processing
-* Plugable architecture
-* File system as default storage
-* Append Only
-* Data consumption
-* Automatic snapshotting
-* Split event log per immutable data blocks
-* Metadata and binary search for time travel
-* Interfaces
+## TODO
+
 
 ```
 1. Event Scheduler
@@ -40,12 +31,24 @@ Status: IN PROGRESS /  INCUBATING
 # event subscribed
 ```
 
-_Connectors_
+## Connectors
 
 * rsocket / message-broker flux message emitted / consumed
 * websocket message sent / received
 * rest api called / sse event received 
 * file created, written / read, removed
+
+## Functionality
+* Concepts
+* Simple reactive data processing
+* Plugable architecture
+* File system as default storage
+* Append Only
+* Data consumption
+* Automatic snapshotting
+* Split event log per immutable data blocks
+* Metadata and binary search for time travel
+* Interfaces
 
 ## Resources
 
