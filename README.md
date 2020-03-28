@@ -15,19 +15,19 @@ Status: IN PROGRESS /  INCUBATING
 ------------------
 -> incomming event
    -> commands/${cmdSeq}-${eventMetadata} file with event metadata body created
-# command sent
+# valid command sent / handling and event
 
 2. Event Processor
 ------------------
 -> event data from commands/${cmdSeq}-${eventMetadata} file read and event appended to event-log
    -> events/${evtSeq}-${eventType}-${eventAggId} file with event body created
       -> commands/${cmdSeq}-${eventMetadata} file removed
-# event present
+# event persisted
 
 3. Event Handler
 ----------------
 -> events/${evtSeq}-${eventType}-${eventAggId} file read with event metadata
-   -> emit event if target subscribers found
+   -> emit event if target subscribers found or create notify/... file
       -> events/${evtSeq}-${eventType}-${eventAggId} file removed
 # subscribers notified
 ```
